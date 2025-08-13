@@ -76,6 +76,11 @@ TabNeked:CreateButton({Name = "[✨] Obby Cilivization (Alpha)", Callback = func
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/duieisjdhxjxobbycilivization/refs/heads/main/neked.lua"))()
 end})
 
+-- Новая кнопка "Arena Royal"
+TabNeked:CreateButton({Name = "Arena Royal", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/arenaroyal/refs/heads/main/script.lua"))()
+end})
+
 -- ===== RingTa Scripts =====
 TabRingTa:CreateButton({Name = "Ink Game", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/inkgames.github.io/refs/heads/main/ringta.lua"))()
