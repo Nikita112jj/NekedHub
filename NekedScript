@@ -18,6 +18,7 @@ local TabNeked = Window:CreateTab("Neked Scripts", 4483362458)
 local TabVoid = Window:CreateTab("VoidWare Scripts", 4483362458)
 local TabRingTa = Window:CreateTab("RingTa Scripts", 4483362458)
 local TabEf = Window:CreateTab("eF Scripts", 4483362458)
+local TabH4x = Window:CreateTab("H4x Hub", 4483362458) -- 🔥 Новая вкладка
 
 -- ===== Neked Scripts =====
 TabNeked:CreateButton({Name = "Arm Wrestling Legends", Callback = function()
@@ -76,7 +77,6 @@ TabNeked:CreateButton({Name = "[✨] Obby Cilivization (Alpha)", Callback = func
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/duieisjdhxjxobbycilivization/refs/heads/main/neked.lua"))()
 end})
 
--- Новая кнопка "Arena Royal"
 TabNeked:CreateButton({Name = "Arena Royal", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/arenaroyal/refs/heads/main/script.lua"))()
 end})
@@ -126,4 +126,9 @@ end})
 -- ===== eF Scripts =====
 TabEf:CreateButton({Name = "Ink Game (Большой риск бана)", Callback = function()
     loadstring(game:HttpGet("https://rawscripts.net/raw/HIDE-AND-SEEK-Ink-Game-eF-Hub-44791"))()
+end})
+
+-- ===== H4x Hub =====
+TabH4x:CreateButton({Name = "H4x Hub Loader", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader.lua", true))()
 end})
