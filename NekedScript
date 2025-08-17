@@ -8,17 +8,17 @@ local Window = Rayfield:CreateWindow({
     Name = "Neked Hub",
     LoadingTitle = "Neked Hub Loading...",
     LoadingSubtitle = "By Neked",
-    ConfigurationSaving = {
-        Enabled = false
-    }
+    ConfigurationSaving = { Enabled = false }
 })
 
 -- Вкладки
-local TabNeked = Window:CreateTab("Neked Scripts", 4483362458)
-local TabVoid = Window:CreateTab("VoidWare Scripts", 4483362458)
-local TabRingTa = Window:CreateTab("RingTa Scripts", 4483362458)
-local TabEf = Window:CreateTab("eF Scripts", 4483362458)
-local TabH4x = Window:CreateTab("H4x Hub", 4483362458) -- 🔥 Новая вкладка
+local TabNeked = Window:CreateTab("Neked Scripts")
+local TabVoid = Window:CreateTab("VoidWare Scripts")
+local TabRingTa = Window:CreateTab("RingTa Scripts")
+local TabEf = Window:CreateTab("eF Scripts")
+local TabH4x = Window:CreateTab("H4x Hub")
+local TabTuff = Window:CreateTab("TUFF Hub")
+local TabUniversal = Window:CreateTab("Универсальные Скрипты")
 
 -- ===== Neked Scripts =====
 TabNeked:CreateButton({Name = "Arm Wrestling Legends", Callback = function()
@@ -131,4 +131,84 @@ end})
 -- ===== H4x Hub =====
 TabH4x:CreateButton({Name = "H4x Hub Loader", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/H4xScripts/Loader/refs/heads/main/loader.lua", true))()
+end})
+
+-- ===== TUFF Hub =====
+TabTuff:CreateButton({Name = "TUFF Loader", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/TuffGuys/TuffGuys/refs/heads/main/Loader"))()
+
+    Rayfield:Notify({
+        Title = "⚠️ TUFF Hub",
+        Content = "Скрипт поддерживает игры:\n- Dead Rails\n- Grow a Garden\n- Forsaken\n- Dig\n- Ink Game\n- FlashPoint\n- 99 Nights in the forest\n- Doors",
+        Duration = 10
+    })
+end})
+
+-- ===== Универсальные Скрипты =====
+TabUniversal:CreateButton({Name = "Infinity Yield", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end})
+
+TabUniversal:CreateButton({Name = "Nameless Admin", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"))()
+end})
+
+TabUniversal:CreateButton({Name = "Dex Explorer", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+end})
+
+-- ===== Функции =====
+TabUniversal:CreateToggle({Name = "Inf Jump", Callback = function(state)
+    local UserInputService = game:GetService("UserInputService")
+    if state then
+        _G.InfJump = UserInputService.JumpRequest:Connect(function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+        end)
+    else
+        if _G.InfJump then _G.InfJump:Disconnect() end
+    end
+end})
+
+-- ✅ Фикснутый Noclip
+TabUniversal:CreateToggle({Name = "Noclip", Callback = function(state)
+    local Players = game:GetService("Players")
+    local RunService = game:GetService("RunService")
+    local LocalPlayer = Players.LocalPlayer
+
+    if state then
+        _G.NoclipLoop = RunService.Stepped:Connect(function()
+            if LocalPlayer.Character then
+                for _, v in pairs(LocalPlayer.Character:GetDescendants()) do
+                    if v:IsA("BasePart") and v.CanCollide == true then
+                        v.CanCollide = false
+                    end
+                end
+            end
+        end)
+    else
+        if _G.NoclipLoop then
+            _G.NoclipLoop:Disconnect()
+            _G.NoclipLoop = nil
+        end
+    end
+end})
+
+-- Скорость
+local speed = 16
+TabUniversal:CreateInput({Name = "Напишите скорость", PlaceholderText = "Напишите скорость", RemoveTextAfterFocusLost = false, Callback = function(text)
+    speed = tonumber(text) or 16
+end})
+
+TabUniversal:CreateButton({Name = "Подтвердить скорость", Callback = function()
+    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end})
+
+TabUniversal:CreateToggle({Name = "Loop Speed", Callback = function(state)
+    if state then
+        _G.SpeedLoop = game:GetService("RunService").Stepped:Connect(function()
+            game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+        end)
+    else
+        if _G.SpeedLoop then _G.SpeedLoop:Disconnect() end
+    end
 end})
