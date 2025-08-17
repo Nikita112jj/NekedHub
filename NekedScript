@@ -57,10 +57,6 @@ TabNeked:CreateButton({Name = "The Strongest Battlegrounds", Callback = function
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YQANTG/YQANTG/refs/heads/main/YQANTGV31.txt"))()
 end})
 
-TabNeked:CreateButton({Name = "Roblox Egor Universal Script", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DROID-cell-sys/ANTI-UTTP-SCRIPTT/refs/heads/main/EGOR%20SCRIPT%20BY%20ANTI-UTTP"))()
-end})
-
 TabNeked:CreateButton({Name = "Doors", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/message.txt"))()
 end})
@@ -79,6 +75,10 @@ end})
 
 TabNeked:CreateButton({Name = "Arena Royal", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/arenaroyal/refs/heads/main/script.lua"))()
+end})
+
+TabNeked:CreateButton({Name = "Tower Of Hell", Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/TowerOfHell/refs/heads/main/Scrip.lua"))()
 end})
 
 -- ===== RingTa Scripts =====
@@ -169,7 +169,6 @@ TabUniversal:CreateToggle({Name = "Inf Jump", Callback = function(state)
     end
 end})
 
--- ✅ Фикснутый Noclip
 TabUniversal:CreateToggle({Name = "Noclip", Callback = function(state)
     local Players = game:GetService("Players")
     local RunService = game:GetService("RunService")
