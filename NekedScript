@@ -19,109 +19,76 @@ local TabEf = Window:CreateTab("eF Scripts")
 local TabH4x = Window:CreateTab("H4x Hub")
 local TabTuff = Window:CreateTab("TUFF Hub")
 local TabUniversal = Window:CreateTab("Универсальные Скрипты")
+local TabNN = Window:CreateTab("нн скрипты") -- Новая вкладка
 
 -- ===== Neked Scripts =====
-TabNeked:CreateButton({Name = "Arm Wrestling Legends", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/ArmWrestlingLegends/refs/heads/main/script.lua"))()
-end})
+local nekedScripts = {
+    {"Arm Wrestling Legends", "https://raw.githubusercontent.com/Nikita112jj/ArmWrestlingLegends/refs/heads/main/script.lua"},
+    {"Race Clicker", "https://raw.githubusercontent.com/Nikita112jj/raceclicker/refs/heads/main/script.lua"},
+    {"Build A Boat For Treasure", "https://rawscripts.net/raw/Build-A-Boat-For-Treasure-Ultimte-B3BFT-Script-28601"},
+    {"The 1000000$ Glass Bridge Script", "https://raw.githubusercontent.com/Nikita112jj/For1000000GlassBridge/refs/heads/main/script.lua"},
+    {"Noobs Must Die", "https://raw.githubusercontent.com/Nikita112jj/NoobsMustDie/refs/heads/main/script.lua"},
+    {"Gun Grounds FFA", "https://raw.githubusercontent.com/Nikita112jj/GunGroundsFFA/refs/heads/main/script.lua"},
+    {"Blade Ball", "https://raw.githubusercontent.com/NodeX-Enc/NodeX/refs/heads/main/Main.lua"},
+    {"24 days to lose weight", "https://raw.githubusercontent.com/Nikita112jj/24daystoloseweight/refs/heads/main/script.lua"},
+    {"The Strongest Battlegrounds", "https://raw.githubusercontent.com/YQANTG/YQANTG/refs/heads/main/YQANTGV31.txt"},
+    {"Doors", "https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/message.txt"},
+    {"Rake", "https://raw.githubusercontent.com/Nikita112jj/RAKE/refs/heads/main/script.lua"},
+    {"Prospecting", "https://raw.githubusercontent.com/Nikita112jj/Prospecting/refs/heads/main/script.lua"},
+    {"[✨] Obby Cilivization (Alpha)", "https://raw.githubusercontent.com/Nikita112jj/duieisjdhxjxobbycilivization/refs/heads/main/neked.lua"},
+    {"Arena Royal", "https://raw.githubusercontent.com/Nikita112jj/arenaroyal/refs/heads/main/script.lua"},
+    {"Tower Of Hell", "https://raw.githubusercontent.com/Nikita112jj/TowerOfHell/refs/heads/main/Scrip.lua"}
+}
 
-TabNeked:CreateButton({Name = "Race Clicker", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/raceclicker/refs/heads/main/script.lua"))()
-end})
+for _, v in pairs(nekedScripts) do
+    TabNeked:CreateButton({
+        Name = v[1],
+        Callback = function()
+            loadstring(game:HttpGet(v[2]))()
+        end
+    })
+end
 
-TabNeked:CreateButton({Name = "Build A Boat For Treasure", Callback = function()
-    loadstring(game:HttpGet("https://rawscripts.net/raw/Build-A-Boat-For-Treasure-Ultimte-B3BFT-Script-28601"))()
-end})
-
-TabNeked:CreateButton({Name = "The 1000000$ Glass Bridge Script", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/For1000000GlassBridge/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Noobs Must Die", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/NoobsMustDie/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Gun Grounds FFA", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/GunGroundsFFA/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Blade Ball", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/NodeX-Enc/NodeX/refs/heads/main/Main.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "24 days to lose weight", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/24daystoloseweight/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "The Strongest Battlegrounds", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/YQANTG/YQANTG/refs/heads/main/YQANTGV31.txt"))()
-end})
-
-TabNeked:CreateButton({Name = "Doors", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHunterSolo1/Scripts/refs/heads/main/message.txt"))()
-end})
-
-TabNeked:CreateButton({Name = "Rake", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/RAKE/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Prospecting", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/Prospecting/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "[✨] Obby Cilivization (Alpha)", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/duieisjdhxjxobbycilivization/refs/heads/main/neked.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Arena Royal", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/arenaroyal/refs/heads/main/script.lua"))()
-end})
-
-TabNeked:CreateButton({Name = "Tower Of Hell", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita112jj/TowerOfHell/refs/heads/main/Scrip.lua"))()
+-- ===== нн скрипты =====
+TabNN:CreateButton({Name = "Murder Mystery 2 (ghost hub)", Callback = function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Murder-Mystery-2-GhostHub-MM-13413"))()
 end})
 
 -- ===== RingTa Scripts =====
-TabRingTa:CreateButton({Name = "Ink Game", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/inkgames.github.io/refs/heads/main/ringta.lua"))()
-end})
+local ringTaScripts = {
+    {"Ink Game", "https://raw.githubusercontent.com/wefwef127382/inkgames.github.io/refs/heads/main/ringta.lua"},
+    {"Steal A Brainrot", "https://api.luarmor.net/files/v3/loaders/4dfd8f97b48ec9c81706cb36a3f382d8.lua"},
+    {"Forsaken", "https://raw.githubusercontent.com/wefwef127382/forsakenloader.github.io/refs/heads/main/RINGTABUBLIK.lua"},
+    {"99 nights in the forest", "https://raw.githubusercontent.com/wefwef127382/99daysloader.github.io/refs/heads/main/ringta.lua"},
+    {"Dead Rails", "https://raw.githubusercontent.com/wefwef127382/DEADRAILS.github.io/refs/heads/main/mainringta.lua"},
+    {"Grow A Garden", "https://raw.githubusercontent.com/wehjf/gardenload.github.io/refs/heads/main/erf.lua"}
+}
 
-TabRingTa:CreateButton({Name = "Steal A Brainrot", Callback = function()
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/4dfd8f97b48ec9c81706cb36a3f382d8.lua"))()
-end})
-
-TabRingTa:CreateButton({Name = "Forsaken", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/forsakenloader.github.io/refs/heads/main/RINGTABUBLIK.lua"))()
-end})
-
-TabRingTa:CreateButton({Name = "99 nights in the forest", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/99daysloader.github.io/refs/heads/main/ringta.lua"))()
-end})
-
-TabRingTa:CreateButton({Name = "Dead Rails", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef127382/DEADRAILS.github.io/refs/heads/main/mainringta.lua"))()
-end})
-
-TabRingTa:CreateButton({Name = "Grow A Garden", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/wehjf/gardenload.github.io/refs/heads/main/erf.lua"))()
-end})
+for _, v in pairs(ringTaScripts) do
+    TabRingTa:CreateButton({
+        Name = v[1],
+        Callback = function()
+            loadstring(game:HttpGet(v[2]))()
+        end
+    })
+end
 
 -- ===== VoidWare Scripts =====
-TabVoid:CreateButton({Name = "Ink Game", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua", true))()
-end})
+local voidWareScripts = {
+    {"Ink Game", "https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/inkgame.lua"},
+    {"99 days in the forest", "https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/nightsintheforest.lua"},
+    {"Forsaken", "https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/forsaken.lua"},
+    {"Bed Wars", "https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua"}
+}
 
-TabVoid:CreateButton({Name = "99 days in the forest", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/nightsintheforest.lua", true))()
-end})
-
-TabVoid:CreateButton({Name = "Forsaken", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/VW-Add/main/forsaken.lua", true))()
-end})
-
-TabVoid:CreateButton({Name = "Bed Wars", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
-end})
+for _, v in pairs(voidWareScripts) do
+    TabVoid:CreateButton({
+        Name = v[1],
+        Callback = function()
+            loadstring(game:HttpGet(v[2], true))()
+        end
+    })
+end
 
 -- ===== eF Scripts =====
 TabEf:CreateButton({Name = "Ink Game (Большой риск бана)", Callback = function()
@@ -136,7 +103,6 @@ end})
 -- ===== TUFF Hub =====
 TabTuff:CreateButton({Name = "TUFF Loader", Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TuffGuys/TuffGuys/refs/heads/main/Loader"))()
-
     Rayfield:Notify({
         Title = "⚠️ TUFF Hub",
         Content = "Скрипт поддерживает игры:\n- Dead Rails\n- Grow a Garden\n- Forsaken\n- Dig\n- Ink Game\n- FlashPoint\n- 99 Nights in the forest\n- Doors",
@@ -145,19 +111,24 @@ TabTuff:CreateButton({Name = "TUFF Loader", Callback = function()
 end})
 
 -- ===== Универсальные Скрипты =====
-TabUniversal:CreateButton({Name = "Infinity Yield", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
-end})
+local universalScripts = {
+    {"Infinity Yield", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"},
+    {"Nameless Admin", "https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"},
+    {"Dex Explorer", "https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"},
+    {"Fly Gui V3", "https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"}
+}
 
-TabUniversal:CreateButton({Name = "Nameless Admin", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"))()
-end})
-
-TabUniversal:CreateButton({Name = "Dex Explorer", Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
-end})
+for _, v in pairs(universalScripts) do
+    TabUniversal:CreateButton({
+        Name = v[1],
+        Callback = function()
+            loadstring(game:HttpGet(v[2]))()
+        end
+    })
+end
 
 -- ===== Функции =====
+-- Inf Jump
 TabUniversal:CreateToggle({Name = "Inf Jump", Callback = function(state)
     local UserInputService = game:GetService("UserInputService")
     if state then
@@ -169,11 +140,11 @@ TabUniversal:CreateToggle({Name = "Inf Jump", Callback = function(state)
     end
 end})
 
+-- Noclip
 TabUniversal:CreateToggle({Name = "Noclip", Callback = function(state)
     local Players = game:GetService("Players")
     local RunService = game:GetService("RunService")
     local LocalPlayer = Players.LocalPlayer
-
     if state then
         _G.NoclipLoop = RunService.Stepped:Connect(function()
             if LocalPlayer.Character then
@@ -185,10 +156,7 @@ TabUniversal:CreateToggle({Name = "Noclip", Callback = function(state)
             end
         end)
     else
-        if _G.NoclipLoop then
-            _G.NoclipLoop:Disconnect()
-            _G.NoclipLoop = nil
-        end
+        if _G.NoclipLoop then _G.NoclipLoop:Disconnect() _G.NoclipLoop = nil end
     end
 end})
 
@@ -199,15 +167,22 @@ TabUniversal:CreateInput({Name = "Напишите скорость", Placeholde
 end})
 
 TabUniversal:CreateButton({Name = "Подтвердить скорость", Callback = function()
-    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+    local player = game:GetService("Players").LocalPlayer
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        player.Character.Humanoid.WalkSpeed = speed
+    end
 end})
 
+-- Loop Speed
 TabUniversal:CreateToggle({Name = "Loop Speed", Callback = function(state)
     if state then
         _G.SpeedLoop = game:GetService("RunService").Stepped:Connect(function()
-            game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = speed
+            local player = game:GetService("Players").LocalPlayer
+            if player.Character and player.Character:FindFirstChild("Humanoid") then
+                player.Character.Humanoid.WalkSpeed = speed
+            end
         end)
     else
-        if _G.SpeedLoop then _G.SpeedLoop:Disconnect() end
+        if _G.SpeedLoop then _G.SpeedLoop:Disconnect() _G.SpeedLoop = nil end
     end
 end})
